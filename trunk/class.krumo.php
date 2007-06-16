@@ -58,7 +58,7 @@ if (!defined('KRUMO_TRUNCATE_LENGTH')) {
 *
 * @package Krumo
 */
-class krumo {
+Class krumo {
 
 	/**
 	* Return Krumo version
@@ -67,7 +67,7 @@ class krumo {
 	* @access public
 	* @static
 	*/
-	function version() {
+	Function version() {
 		return '0.1a';
 		}
 
@@ -79,7 +79,7 @@ class krumo {
 	* @access public
 	* @static
 	*/
-	function backtrace() {
+	Function backtrace() {
 
 		// disabled ?
 		//
@@ -98,7 +98,7 @@ class krumo {
 	* @access public
 	* @static
 	*/
-	function classes() {
+	Function classes() {
 
 		// disabled ?
 		//
@@ -112,7 +112,7 @@ class krumo {
 <div class="krumo-title">
 This is a list of all currently declared classes.
 </div>
-		<?
+		<?php
 		return krumo::dump(get_declared_classes());
 		}
 		
@@ -122,7 +122,7 @@ This is a list of all currently declared classes.
 	* @access public
 	* @static
 	*/
-	function interfaces() {
+	Function interfaces() {
 
 		// disabled ?
 		//
@@ -136,7 +136,7 @@ This is a list of all currently declared classes.
 <div class="krumo-title">
 This is a list of all currently declared interfaces.
 </div>
-		<?
+		<?php
 		return krumo::dump(get_declared_interfaces());
 		}
 
@@ -146,7 +146,7 @@ This is a list of all currently declared interfaces.
 	* @access public
 	* @static
 	*/
-	function includes() {
+	Function includes() {
 
 		// disabled ?
 		//
@@ -160,7 +160,7 @@ This is a list of all currently declared interfaces.
 <div class="krumo-title">
 This is a list of all currently included (or required) files.
 </div>
-		<?
+		<?php
 		return krumo::dump(get_included_files());
 		}
 		
@@ -170,7 +170,7 @@ This is a list of all currently included (or required) files.
 	* @access public
 	* @static
 	*/
-	function functions() {
+	Function functions() {
 
 		// disabled ?
 		//
@@ -184,7 +184,7 @@ This is a list of all currently included (or required) files.
 <div class="krumo-title">
 This is a list of all currently declared functions.
 </div>
-		<?
+		<?php
 		return krumo::dump(get_defined_functions());
 		}
 		
@@ -194,7 +194,7 @@ This is a list of all currently declared functions.
 	* @access public
 	* @static
 	*/
-	function defines() {
+	Function defines() {
 
 		// disabled ?
 		//
@@ -208,7 +208,7 @@ This is a list of all currently declared functions.
 <div class="krumo-title">
 This is a list of all currently declared constants (defines).
 </div>
-		<?
+		<?php
 		return krumo::dump(get_defined_constants());
 		}
 		
@@ -218,7 +218,7 @@ This is a list of all currently declared constants (defines).
 	* @access public
 	* @static
 	*/
-	function extensions() {
+	Function extensions() {
 
 		// disabled ?
 		//
@@ -232,7 +232,7 @@ This is a list of all currently declared constants (defines).
 <div class="krumo-title">
 This is a list of all currently loaded PHP extensions.
 </div>
-		<?
+		<?php
 		return krumo::dump(get_loaded_extensions());
 		}
 
@@ -242,7 +242,7 @@ This is a list of all currently loaded PHP extensions.
 	* @access public
 	* @static
 	*/
-	function headers() {
+	Function headers() {
 
 		// disabled ?
 		//
@@ -256,7 +256,7 @@ This is a list of all currently loaded PHP extensions.
 <div class="krumo-title">
 This is a list of all HTTP request headers.
 </div>
-		<?
+		<?php
 		return krumo::dump(getAllHeaders());
 		}
 
@@ -266,7 +266,7 @@ This is a list of all HTTP request headers.
 	* @access public
 	* @static
 	*/
-	function phpini() {
+	Function phpini() {
 
 		// disabled ?
 		//
@@ -278,9 +278,9 @@ This is a list of all HTTP request headers.
 		//
 		?>
 <div class="krumo-title">
-This is a list of the configuration settings read from <code><b><?=get_cfg_var('cfg_file_path')?></b></code>.
+This is a list of the configuration settings read from <code><b><?php echo get_cfg_var('cfg_file_path');?></b></code>.
 </div>
-		<?
+		<?php
 		return krumo::dump(parse_ini_file(get_cfg_var('cfg_file_path'), true));
 		}
 		
@@ -290,7 +290,7 @@ This is a list of the configuration settings read from <code><b><?=get_cfg_var('
 	* @access public
 	* @static
 	*/
-	function conf() {
+	Function conf() {
 
 		// disabled ?
 		//
@@ -304,7 +304,7 @@ This is a list of the configuration settings read from <code><b><?=get_cfg_var('
 <div class="krumo-title">
 This is a list of all your configuration settings.
 </div>
-		<?
+		<?php
 		return krumo::dump(ini_get_all());
 		}
 
@@ -314,7 +314,7 @@ This is a list of all your configuration settings.
 	* @access public
 	* @static
 	*/
-	function path() {
+	Function path() {
 
 		// disabled ?
 		//
@@ -328,7 +328,7 @@ This is a list of all your configuration settings.
 <div class="krumo-title">
 This is a list of the specified directories under your <code><b>include_path</b></code> option.
 </div>
-		<?
+		<?php
 		return krumo::dump(explode(PATH_SEPARATOR, ini_get('include_path')));
 		}
 
@@ -338,7 +338,7 @@ This is a list of the specified directories under your <code><b>include_path</b>
 	* @access public
 	* @static
 	*/
-	function request() {
+	Function request() {
 
 		// disabled ?
 		//
@@ -352,7 +352,7 @@ This is a list of the specified directories under your <code><b>include_path</b>
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_REQUEST);
 		}
 
@@ -362,7 +362,7 @@ This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 	* @access public
 	* @static
 	*/
-	function get() {
+	Function get() {
 
 		// disabled ?
 		//
@@ -376,7 +376,7 @@ This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_GET</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_GET);
 		}
 
@@ -386,7 +386,7 @@ This is a list of all the values from the <code><b>$_GET</b></code> array.
 	* @access public
 	* @static
 	*/
-	function post() {
+	Function post() {
 
 		// disabled ?
 		//
@@ -400,7 +400,7 @@ This is a list of all the values from the <code><b>$_GET</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_POST</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_POST);
 		}
 
@@ -410,7 +410,7 @@ This is a list of all the values from the <code><b>$_POST</b></code> array.
 	* @access public
 	* @static
 	*/
-	function server() {
+	Function server() {
 
 		// disabled ?
 		//
@@ -424,7 +424,7 @@ This is a list of all the values from the <code><b>$_POST</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_SERVER);
 		}
 
@@ -434,7 +434,7 @@ This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 	* @access public
 	* @static
 	*/
-	function cookie() {
+	Function cookie() {
 
 		// disabled ?
 		//
@@ -448,7 +448,7 @@ This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_COOKIE);
 		}
 
@@ -458,7 +458,7 @@ This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 	* @access public
 	* @static
 	*/
-	function env() {
+	Function env() {
 
 		// disabled ?
 		//
@@ -472,7 +472,7 @@ This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_ENV</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_ENV);
 		}
 
@@ -482,7 +482,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 	* @access public
 	* @static
 	*/
-	function session() {
+	Function session() {
 
 		// disabled ?
 		//
@@ -496,7 +496,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 <div class="krumo-title">
 This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 </div>
-		<?
+		<?php
 		return krumo::dump($_SESSION);
 		}
 
@@ -508,7 +508,7 @@ This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 	* @access public
 	* @static
 	*/
-	function ini($ini_file) {
+	Function ini($ini_file) {
 
 		// disabled ?
 		//
@@ -526,9 +526,9 @@ This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 		//
 		?>
 <div class="krumo-title">
-This is a list of all the values from the <code><b><?=realpath($ini_file) ? realpath($ini_file) : $ini_file;?></b></code> INI file.
+This is a list of all the values from the <code><b><?php echo realpath($ini_file) ? realpath($ini_file) : $ini_file;?></b></code> INI file.
 </div>
-		<?
+		<?php
 		return krumo::dump($_);
 		}
 
@@ -541,7 +541,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access public
 	* @static
 	*/
-	function dump($data) {
+	Function dump($data) {
 
 		// disabled ?
 		//
@@ -577,24 +577,24 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 		?>
 <div class="krumo-root">
 	<ul class="krumo-node krumo-first">
-		<?=krumo::_dump($data);?>
+		<?php echo krumo::_dump($data);?>
 		<li class="krumo-footnote">
 			<div class="krumo-version" style="white-space:nowrap;">
-				<h6>Krumo version <?=krumo::version()?></h6> | <a
+				<h6>Krumo version <?php echo krumo::version();?></h6> | <a
 					href="http://krumo.sourceforge.net"
 					target="_blank">http://krumo.sourceforge.net</a>
 			</div>
 		
-		<? if (@$d['file']) { ?>
+		<?php if (@$d['file']) { ?>
 		<span class="krumo-call" style="white-space:nowrap;">
-			Called from <code><?=$d['file']?></code>,
-				line <code><?=$d['line']?></code></span>
-		<? } ?>
+			Called from <code><?php echo $d['file']?></code>,
+				line <code><?php echo $d['line']?></code></span>
+		<?php } ?>
 		&nbsp;
 		</li>
 	</ul>
 </div>
-<?
+<?php
 		// flee the hive
 		//
 		$_recursion_marker = krumo::_marker();
@@ -627,7 +627,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _config($group, $name, $fallback=null) {
+	Function _config($group, $name, $fallback=null) {
 		
 		static $_config = array();
 		
@@ -655,7 +655,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _css() {
+	Function _css() {
 		
 		static $_css = false;
 		
@@ -696,24 +696,24 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 			// the CSS
 			//
 			?>
-<!-- Using Krumo Skin: <?=preg_replace('~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis', '', realpath($_));?> -->
+<!-- Using Krumo Skin: <?php echo preg_replace('~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis', '', realpath($_));?> -->
 <style type="text/css">
 <!--/**/
-<?=$css?>
+<?php echo $css?>
 
 /**/-->
 </style>
-<?
+<?php
 			// the JS 
 			//
 			?>
 <script type="text/javascript">
 <!--//
-<?=join(file(KRUMO_DIR . "krumo.js"));?>
+<?php echo join(file(KRUMO_DIR . "krumo.js"));?>
 
 //-->
 </script>
-<?
+<?php
 			}
 		
 		return $_css;
@@ -728,7 +728,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access public
 	* @static
 	*/
-	function enable() {
+	Function enable() {
 		return true === krumo::_debug(true);
 		}
 
@@ -739,7 +739,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access public
 	* @static
 	*/
-	function disable() {
+	Function disable() {
 		return false === krumo::_debug(false);
 		}
 	
@@ -751,7 +751,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _debug($state=null) {
+	Function _debug($state=null) {
 		
 		static $_ = true;
 		
@@ -776,7 +776,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _dump(&$data, $name='...') {
+	Function _dump(&$data, $name='...') {
 
 		// object ?
 		//
@@ -861,18 +861,18 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _null($name) {
+	Function _null($name) {
 ?>
 <li class="krumo-child">
 	<div class="krumo-element"
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type krumo-null">NULL</em>) 
 	</div>
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -885,7 +885,7 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function _marker() {
+	Function _marker() {
 		
 		static $_recursion_marker;
 		if (!isset($_recursion_marker)) {
@@ -907,16 +907,9 @@ This is a list of all the values from the <code><b><?=realpath($ini_file) ? real
 	* @access private
 	* @static
 	*/
-	function &_hive(&$bee) {
+	Function &_hive(&$bee) {
 		
 		static $_ = array();
-/*
-static $x4 = 0;
-static $x5 = array();
-if (++$x4 > 100) {
-	die('x');
-	}
-*/
 
 		// new bee ?
 		//
@@ -946,7 +939,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _vars(&$data) {
+	Function _vars(&$data) {
 
 		$_is_object = is_object($data);
 		
@@ -974,7 +967,7 @@ if (++$x4 > 100) {
 		?>
 <div class="krum-nest" style="display:none;">
 	<ul class="krumo-node">
-	<?
+	<?php
 
 	// keys ?
 	//
@@ -1010,7 +1003,7 @@ if (++$x4 > 100) {
 		} ?>
 	</ul>
 </div>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1021,7 +1014,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _recursion() {
+	Function _recursion() {
 ?>
 <div class="krum-nest" style="display:none;">
 	<ul class="krumo-node">
@@ -1036,7 +1029,7 @@ if (++$x4 > 100) {
 		</li>
 	</ul>
 </div>
-<?
+<?php
 		}
 	
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1049,16 +1042,16 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _callback(&$data, $name) {
+	Function _callback(&$data, $name) {
 ?>
 <li class="krumo-child">
 	<div class="krumo-element"
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Callback</em>) 
-			<strong class="krumo-callback"><?
+			<strong class="krumo-callback"><?php
 				if (is_array($data)) {
 					if (is_object($data[0])) {
 						$data[0] = get_class($data[0]);
@@ -1073,7 +1066,7 @@ if (++$x4 > 100) {
 				?>();</strong>
 	</div>
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1086,29 +1079,29 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _array(&$data, $name) {
+	Function _array(&$data, $name) {
 ?>
 <li class="krumo-child">
 	
-	<div class="krumo-element<?=count($data) > 0 ? ' krumo-expand' : '';?>"
-		<?if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?} ?>
+	<div class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>"
+		<?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Array</em>) 
-			<strong class="krumo-array"><?=
+			<strong class="krumo-array"><?php echo 
 				(count($data)==1)
 					?("1 element")
 					:(count($data)." elements");
 				?></strong>
 	</div>
 
-	<? if (count($data)) {
+	<?php if (count($data)) {
 		krumo::_vars($data);
 		} ?>
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1121,25 +1114,25 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _object(&$data, $name) {
+	Function _object(&$data, $name) {
 ?>
 <li class="krumo-child">
 
-	<div class="krumo-element<?=count($data) > 0 ? ' krumo-expand' : '';?>"
-		<?if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?} ?>
+	<div class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>"
+		<?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Object</em>) 
-			<strong class="krumo-class"><?=get_class($data);?></strong>
+			<strong class="krumo-class"><?php echo get_class($data);?></strong>
 	</div>
 
-	<? if (count($data)) {
+	<?php if (count($data)) {
 		krumo::_vars($data);
 		} ?>
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1152,7 +1145,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _resource($data, $name) {
+	Function _resource($data, $name) {
 ?>
 <li class="krumo-child">
 
@@ -1160,13 +1153,13 @@ if (++$x4 > 100) {
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Resource</em>) 
-			<strong class="krumo-resource"><?=get_resource_type($data);?></strong>
+			<strong class="krumo-resource"><?php echo get_resource_type($data);?></strong>
 	</div>
 
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1179,7 +1172,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _boolean($data, $name) {
+	Function _boolean($data, $name) {
 ?>
 <li class="krumo-child">
 
@@ -1187,13 +1180,13 @@ if (++$x4 > 100) {
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Boolean</em>) 
-			<strong class="krumo-boolean"><?=$data?'TRUE':'FALSE'?></strong>
+			<strong class="krumo-boolean"><?php echo $data?'TRUE':'FALSE'?></strong>
 	</div>
 
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1206,7 +1199,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _integer($data, $name) {
+	Function _integer($data, $name) {
 ?>
 <li class="krumo-child">
 
@@ -1214,13 +1207,13 @@ if (++$x4 > 100) {
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Integer</em>)
-			<strong class="krumo-integer"><?=$data;?></strong> 
+			<strong class="krumo-integer"><?php echo $data;?></strong> 
 	</div>
 
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1233,7 +1226,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _float($data, $name) {
+	Function _float($data, $name) {
 ?>
 <li class="krumo-child">
 
@@ -1241,13 +1234,13 @@ if (++$x4 > 100) {
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 		
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">Float</em>) 
-			<strong class="krumo-float"><?=$data;?></strong>
+			<strong class="krumo-float"><?php echo $data;?></strong>
 	</div>
 
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1260,7 +1253,7 @@ if (++$x4 > 100) {
 	* @access private
 	* @static
 	*/
-	function _string($data, $name) {
+	Function _string($data, $name) {
 
 		// extra ?
 		//
@@ -1273,29 +1266,29 @@ if (++$x4 > 100) {
 ?>
 <li class="krumo-child">
 
-	<div class="krumo-element<?=$_extra ? ' krumo-expand' : '';?>"
-		<?if ($_extra) {?> onClick="krumo.toggle(this);"<?} ?>
+	<div class="krumo-element<?php echo $_extra ? ' krumo-expand' : '';?>"
+		<?php if ($_extra) {?> onClick="krumo.toggle(this);"<?php } ?>
 		onMouseOver="krumo.over(this);"
 		onMouseOut="krumo.out(this);">
 
-			<a class="krumo-name"><?=$name;?></a>
+			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">String</em>)
-			<strong class="krumo-string"><?=htmlSpecialChars($_);?></strong>
+			<strong class="krumo-string"><?php echo htmlSpecialChars($_);?></strong>
 	</div>
 	
-	<? if ($_extra) { ?>
+	<?php if ($_extra) { ?>
 	<div class="krum-nest" style="display:none;">
 		<ul class="krumo-node">
 			
 			<li class="krumo-child">
-				<div class="krumo-preview"><?=htmlSpecialChars($data);?></div>
+				<div class="krumo-preview"><?php echo htmlSpecialChars($data);?></div>
 			</li>
 			
 		</ul>
 	</div>
-	<? } ?>
+	<?php } ?>
 </li>
-<?
+<?php
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
@@ -1312,7 +1305,7 @@ if (++$x4 > 100) {
 *
 * @see krumo::dump()
 */
-function krumo() {
+Function krumo() {
 	$_ = func_get_args();
 	return call_user_func_array(
 		array('krumo', 'dump'), $_
