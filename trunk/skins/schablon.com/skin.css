@@ -155,3 +155,11 @@ div.krumo-title {
 	}
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+strong.krumo-array-length,
+strong.krumo-string-length {
+	font-weight: normal;
+	color: #000099;
+	}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */

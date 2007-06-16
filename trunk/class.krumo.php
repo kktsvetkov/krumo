@@ -959,7 +959,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 		// render it
 		//
 		?>
-<div class="krum-nest" style="display:none;">
+<div class="krumo-nest" style="display:none;">
 	<ul class="krumo-node">
 	<?php
 
@@ -1010,7 +1010,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	*/
 	Function _recursion() {
 ?>
-<div class="krum-nest" style="display:none;">
+<div class="krumo-nest" style="display:none;">
 	<ul class="krumo-node">
 		<li class="krumo-child">
 			<div class="krumo-element"
@@ -1046,12 +1046,12 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 		onMouseOut="krumo.out(this);">
 		
 			<a class="krumo-name"><?php echo $name;?></a>
-			(<em class="krumo-type">Array</em>) 
-			<strong class="krumo-array"><?php echo 
+			(<em class="krumo-type">Array, <strong class="krumo-array-length"><?php echo 
 				(count($data)==1)
 					?("1 element")
 					:(count($data)." elements");
-				?></strong>
+				?></strong></em>) 
+			
 				
 			<?php
 			// callback ?
@@ -1061,7 +1061,9 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 				?>
 				<span class="krumo-callback"> |
 					(<em class="krumo-type">Callback</em>)
-					<strong class="krumo-string"><?php echo htmlSpecialChars($_[0]);?>::<?php echo htmlSpecialChars($_[1]);?>();</strong></span>
+					<strong class="krumo-string"><?php
+						echo htmlSpecialChars($_[0]);?>::<?php
+						echo htmlSpecialChars($_[1]);?>();</strong></span>
 				<?php
 				}
 			?>
@@ -1243,7 +1245,9 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 		onMouseOut="krumo.out(this);">
 
 			<a class="krumo-name"><?php echo $name;?></a>
-			(<em class="krumo-type">String</em>)
+			(<em class="krumo-type">String,
+				<strong class="krumo-string-length"><?php
+					echo strlen($data) ?> characters</strong> </em>)
 			<strong class="krumo-string"><?php echo htmlSpecialChars($_);?></strong>
 			
 			<?php
@@ -1261,7 +1265,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	</div>
 	
 	<?php if ($_extra) { ?>
-	<div class="krum-nest" style="display:none;">
+	<div class="krumo-nest" style="display:none;">
 		<ul class="krumo-node">
 			
 			<li class="krumo-child">
