@@ -784,12 +784,6 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 			return krumo::_object($data, $name);
 			}
 
-		// callback ?
-		//
-		if (is_callable($data)) {
-			return krumo::_callback($data, $name);
-			}
-
 		// array ?
 		//
 		if (is_array($data)) {
@@ -1035,43 +1029,6 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
 
 	/**
-	* Render a dump for a callback
-	*
-	* @param mixed $data
-	* @param string $name
-	* @access private
-	* @static
-	*/
-	Function _callback(&$data, $name) {
-?>
-<li class="krumo-child">
-	<div class="krumo-element"
-		onMouseOver="krumo.over(this);"
-		onMouseOut="krumo.out(this);">
-		
-			<a class="krumo-name"><?php echo $name;?></a>
-			(<em class="krumo-type">Callback</em>) 
-			<strong class="krumo-callback"><?php
-				if (is_array($data)) {
-					if (is_object($data[0])) {
-						$data[0] = get_class($data[0]);
-						echo "{$data[0]}->{$data[1]}";
-						} else {
-						echo "{$data[0]} :: {$data[1]}";
-						}
-					} else {
-					echo $data;
-					}
-				
-				?>();</strong>
-	</div>
-</li>
-<?php
-		}
-
-	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-
-	/**
 	* Render a dump for an array
 	*
 	* @param mixed $data
@@ -1095,6 +1052,20 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 					?("1 element")
 					:(count($data)." elements");
 				?></strong>
+				
+			<?php
+			// callback ?
+			//
+			if (is_callable($data)) {
+				$_ = array_values($data);
+				?>
+				<span class="krumo-callback"> |
+					(<em class="krumo-type">Callback</em>)
+					<strong class="krumo-string"><?php echo htmlSpecialChars($_[0]);?>::<?php echo htmlSpecialChars($_[1]);?>();</strong></span>
+				<?php
+				}
+			?>
+				
 	</div>
 
 	<?php if (count($data)) {
@@ -1274,6 +1245,19 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 			<a class="krumo-name"><?php echo $name;?></a>
 			(<em class="krumo-type">String</em>)
 			<strong class="krumo-string"><?php echo htmlSpecialChars($_);?></strong>
+			
+			<?php
+			// callback ?
+			//
+			if (is_callable($data)) {
+				?>
+				<span class="krumo-callback"> |
+					(<em class="krumo-type">Callback</em>)
+					<strong class="krumo-string"><?php echo htmlSpecialChars($_);?>();</strong></span>
+				<?php
+				}
+			?>
+			
 	</div>
 	
 	<?php if ($_extra) { ?>
