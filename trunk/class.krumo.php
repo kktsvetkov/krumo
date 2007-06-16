@@ -68,7 +68,7 @@ Class krumo {
 	* @static
 	*/
 	Function version() {
-		return '0.1a';
+		return '0.2a';
 		}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
