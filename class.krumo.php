@@ -598,12 +598,13 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 		// flee the hive
 		//
 		$_recursion_marker = krumo::_marker();
-		$hive =& krumo::_hive($dummy);
-		foreach($hive as $i=>$bee){
-			if (is_object($bee)) {
-				unset($hive[$i]->$_recursion_marker);
-				} else {
-				unset($hive[$i][$_recursion_marker]);
+		if ($hive =& krumo::_hive($dummy)) {
+			foreach($hive as $i=>$bee){
+				if (is_object($bee)) {
+					unset($hive[$i]->$_recursion_marker);
+					} else {
+					unset($hive[$i][$_recursion_marker]);
+					}
 				}
 			}
 
