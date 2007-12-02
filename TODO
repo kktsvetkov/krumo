@@ -6,12 +6,10 @@
 
 BUGS
 ----------------
- - FIXED: Recursion detection crashes under PHP4
+ - watch the SourceForge.net Bug Tracker
 
 Features: PHP
 ----------------
- - Handle error_reporting: right now PHP5 & E_STRICT generates tons of
- 	warnings for calling static functions which are not declared as static
  - Try to detect anonymous (lambda) functions
  - Try to detect whether an array is indexed or associated
  - Add var_export support for arrays and objects

@@ -84,8 +84,8 @@ a img { border: 0px; }
 
 /* Syntax highlighting */
 
-.src-code {  }
-*[class="src-code"], *[class="listing"], *[class="example"] { line-height : 0.5em }
+.src-code { font-family: 'Courier New', Courier, monospace; font-weight: normal; }
+.src-line { font-family: 'Courier New', Courier, monospace; font-weight: normal; }
 
 .src-code a:link { padding: 1px; text-decoration: underline; color: #0000DD; }
 .src-code a:visited { text-decoration: underline; color: #0000DD; }

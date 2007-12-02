@@ -1,7 +1,7 @@
 =============================================================================
 
                                Krumo
-                            version 0.2a
+                            version 0.2.1a
 
 =============================================================================
 
@@ -15,7 +15,7 @@ licence to use this software. The file is titled simply LICENSE.
 OVERVIEW
 ------------------------------------------------------------------------------
 To put it simply, Krumo is a replacement for print_r() and var_dump(). By 
-definition Krumo is a debugging tool (PHP4/PHP5), which displays structured 
+definition Krumo is a debugging tool (for PHP5), which displays structured 
 information about any PHP variable.
 
 A lot of developers use print_r() and var_dump() in the means of debugging 
