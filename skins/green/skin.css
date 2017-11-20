@@ -1,8 +1,6 @@
 /**
 * Krumo "Green" Skin
-*
-* @version $Id$
-* @author Kaloyan K. Tsvetkov <mrasnika@users.sourceforge.net>
+* @author Kaloyan K. Tsvetkov <kaloyan@kaloyan.info>
 */
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -42,16 +40,19 @@ div.krumo-element {
 
 	line-height: 24px;
 	display:block;
-	
+
 	clear:both;
 	white-space:nowrap;
-	
+
 	border-top: solid 1px white;
 	background: #D7F4CA;
 	padding-left: 10px;
 	}
 * html div.krumo-element {
 	padding-bottom: 3px;
+	}
+div.krumo-element:hover {
+	background: gold;
 	}
 a.krumo-name {
 	color:#004000;
@@ -77,9 +78,6 @@ div.krumo-expand {
 	background: #C0EEAC;
 	cursor:pointer;
 	}
-div.krumo-hover {
-	background: gold;
-	}
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -89,6 +87,7 @@ div.krumo-preview {
 	background: white;
 	border-top: 0px;
 	overflow:auto;
+	white-space:pre;
 	}
 * html div.krumo-preview {
 	padding-top: 2px;

@@ -1,8 +1,6 @@
 /**
 * Krumo Default Skin
-*
-* @version $Id$
-* @author Kaloyan K. Tsvetkov <mrasnika@users.sourceforge.net>
+* @author Kaloyan K. Tsvetkov <kaloyan@kaloyan.info>
 */
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -42,16 +40,19 @@ div.krumo-element {
 
 	line-height: 24px;
 	display:block;
-	
+
 	clear:both;
 	white-space:nowrap;
-	
+
 	border-top: solid 1px white;
 	background: #E8E8E8;
 	padding-left: 10px;
 	}
 * html div.krumo-element {
 	padding-bottom: 3px;
+	}
+div.krumo-element:hover {
+	background: #B7DBDB;
 	}
 a.krumo-name {
 	color:#2C5858;
@@ -77,9 +78,6 @@ div.krumo-expand {
 	background: #CCCCCC;
 	cursor:pointer;
 	}
-div.krumo-hover {
-	background: #B7DBDB;
-	}
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -89,6 +87,7 @@ div.krumo-preview {
 	background: white;
 	border-top: 0px;
 	overflow:auto;
+	white-space:pre;
 	}
 * html div.krumo-preview {
 	padding-top: 2px;

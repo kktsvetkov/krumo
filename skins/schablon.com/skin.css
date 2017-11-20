@@ -1,8 +1,6 @@
 /**
 * Krumo `Schablon.com` Skin
-*
-* @version $Id$
-* @author Kaloyan K. Tsvetkov <mrasnika@users.sourceforge.net>
+* @author Kaloyan K. Tsvetkov <kaloyan@kaloyan.info>
 */
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -52,12 +50,12 @@ div.krumo-element {
 	padding-bottom: 3px;
 	line-height: 13px;
 	}
+div.krumo-element:hover {
+	background-color: #BFDFFF;
+	}
 div.krumo-expand {
 	background-image: url(%url%collapsed.gif);
 	cursor:pointer;
-	}
-div.krumo-hover {
-	background-color: #BFDFFF;
 	}
 div.krumo-opened {
 	background-image: url(%url%expanded.gif);
@@ -96,6 +94,7 @@ div.krumo-preview {
 	border: solid 1px #808000;
 	overflow:auto;
 	margin: 5px 1em 1em 0px;
+	white-space:pre;
 	}
 * html div.krumo-preview {
 	padding-top: 2px;
