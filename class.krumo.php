@@ -790,17 +790,14 @@ This is a list of all the values from the <code><b><?php
 	*/
 	private static function _null($name)
 	{
-?>
-<li class="krumo-child">
-	<div class="krumo-element"
-		onMouseOver="krumo.over(this);"
-		onMouseOut="krumo.out(this);">
-
-			<a class="krumo-name"><?php echo $name;?></a>
-			(<em class="krumo-type krumo-null">NULL</em>)
-	</div>
-</li>
-<?php
+		?>
+		<li class="krumo-child">
+			<div class="krumo-element">
+				<a class="krumo-name"><?php echo $name;?></a>
+				(<em class="krumo-type krumo-null">NULL</em>)
+			</div>
+		</li>
+		<?php
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -942,13 +939,10 @@ This is a list of all the values from the <code><b><?php
 		<div class="krumo-nest" style="display:none;">
 			<ul class="krumo-node">
 				<li class="krumo-child">
-					<div class="krumo-element"
-						onMouseOver="krumo.over(this);"
-						onMouseOut="krumo.out(this);">
-							<a class="krumo-name"><big>&#8734;</big></a>
-							(<em class="krumo-type">Recursion</em>)
+					<div class="krumo-element">
+						<a class="krumo-name"><big>&#8734;</big></a>
+						(<em class="krumo-type">Recursion</em>)
 					</div>
-
 				</li>
 			</ul>
 		</div>
@@ -968,10 +962,8 @@ This is a list of all the values from the <code><b><?php
 		?>
 		<li class="krumo-child">
 
-			<div class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>"
-				<?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
+			<div <?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
+				class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>">
 
 					<a class="krumo-name"><?php echo $name;?></a>
 					(<em class="krumo-type">Array, <strong class="krumo-array-length"><?php echo
@@ -1018,10 +1010,8 @@ This is a list of all the values from the <code><b><?php
 		?>
 		<li class="krumo-child">
 
-			<div class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>"
-				<?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
+			<div <?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
+				class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>" >
 
 					<a class="krumo-name"><?php echo $name;?></a>
 					(<em class="krumo-type">Object</em>)
@@ -1048,16 +1038,11 @@ This is a list of all the values from the <code><b><?php
 	{
 		?>
 		<li class="krumo-child">
-
-			<div class="krumo-element"
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
-
-					<a class="krumo-name"><?php echo $name;?></a>
-					(<em class="krumo-type">Resource</em>)
-					<strong class="krumo-resource"><?php echo get_resource_type($data);?></strong>
+			<div class="krumo-element">
+				<a class="krumo-name"><?php echo $name;?></a>
+				(<em class="krumo-type">Resource</em>)
+				<strong class="krumo-resource"><?php echo get_resource_type($data);?></strong>
 			</div>
-
 		</li>
 		<?php
 	}
@@ -1074,20 +1059,15 @@ This is a list of all the values from the <code><b><?php
 	{
 		?>
 		<li class="krumo-child">
-
-			<div class="krumo-element"
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
-
-					<a class="krumo-name"><?php echo $name;?></a>
-					(<em class="krumo-type">Boolean</em>)
-					<strong class="krumo-boolean"><?php
-						echo $data
-							? 'TRUE'
-							: 'FALSE';
-						?></strong>
+			<div class="krumo-element">
+				<a class="krumo-name"><?php echo $name;?></a>
+				(<em class="krumo-type">Boolean</em>)
+				<strong class="krumo-boolean"><?php
+					echo $data
+						? 'TRUE'
+						: 'FALSE';
+					?></strong>
 			</div>
-
 		</li>
 		<?php
 	}
@@ -1104,16 +1084,11 @@ This is a list of all the values from the <code><b><?php
 	{
 		?>
 		<li class="krumo-child">
-
-			<div class="krumo-element"
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
-
-					<a class="krumo-name"><?php echo $name;?></a>
-					(<em class="krumo-type">Integer</em>)
-					<strong class="krumo-integer"><?php echo $data;?></strong>
+			<div class="krumo-element">
+				<a class="krumo-name"><?php echo $name;?></a>
+				(<em class="krumo-type">Integer</em>)
+				<strong class="krumo-integer"><?php echo $data;?></strong>
 			</div>
-
 		</li>
 		<?php
 	}
@@ -1130,16 +1105,11 @@ This is a list of all the values from the <code><b><?php
 	{
 		?>
 		<li class="krumo-child">
-
-			<div class="krumo-element"
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
-
-					<a class="krumo-name"><?php echo $name;?></a>
-					(<em class="krumo-type">Float</em>)
-					<strong class="krumo-float"><?php echo $data;?></strong>
+			<div class="krumo-element">
+				<a class="krumo-name"><?php echo $name;?></a>
+				(<em class="krumo-type">Float</em>)
+				<strong class="krumo-float"><?php echo $data;?></strong>
 			</div>
-
 		</li>
 		<?php
 	}
@@ -1154,7 +1124,6 @@ This is a list of all the values from the <code><b><?php
 	*/
 	private static function _string($data, $name)
 	{
-
 		// extra ?
 		//
 		$_extra = false;
@@ -1167,11 +1136,8 @@ This is a list of all the values from the <code><b><?php
 
 		?>
 		<li class="krumo-child">
-
-			<div class="krumo-element<?php echo $_extra ? ' krumo-expand' : '';?>"
-				<?php if ($_extra) {?> onClick="krumo.toggle(this);"<?php } ?>
-				onMouseOver="krumo.over(this);"
-				onMouseOut="krumo.out(this);">
+			<div <?php if ($_extra) {?> onClick="krumo.toggle(this);"<?php } ?>
+				class="krumo-element<?php echo $_extra ? ' krumo-expand' : '';?>" >
 
 					<a class="krumo-name"><?php echo $name;?></a>
 					(<em class="krumo-type">String,
@@ -1201,12 +1167,10 @@ This is a list of all the values from the <code><b><?php
 				?>
 				<div class="krumo-nest" style="display:none;">
 					<ul class="krumo-node">
-
 						<li class="krumo-child">
 							<div class="krumo-preview"><?php
 								echo htmlSpecialChars($data);?></div>
 						</li>
-
 					</ul>
 				</div>
 				<?php
