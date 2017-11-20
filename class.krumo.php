@@ -652,15 +652,73 @@ This is a list of all the values from the <code><b><?php
 			?>
 <style type="text/css">
 <?php echo $css?>
-/* Using Krumo Skin: <?php echo preg_replace('~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis', '', realpath($_));?> */
-</style>
-<script type="text/javascript">
-<?php echo file_get_contents(KRUMO_DIR . 'krumo.js');?>
-</script>
-<?php
+/* Using Krumo Skin: <?php echo preg_replace(
+	'~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis',
+	'',
+	realpath($_));?> */
+</style><?php
+			self::_js();
 		}
 
 		return $_css;
+	}
+
+	/**
+	* Print the JS
+	*/
+	protected static function _js()
+	{
+		?><script type="text/javascript"> krumo = {
+
+			/**
+			* Add a CSS class to an HTML element
+			* @param HtmlElement el
+			* @param string className
+			*/
+			"reclass": function(el, className)
+			{
+				if (el.className.indexOf(className) < 0)
+				{
+					el.className += (' ' + className);
+				}
+			},
+
+			/**
+			* Remove a CSS class to an HTML element
+			* @param HtmlElement el
+			* @param string className
+			*/
+			"unclass": function(el, className)
+			{
+				if (el.className.indexOf(className) > -1)
+				{
+					el.className = el.className.replace(className, '');
+				}
+			},
+
+			/**
+			* Toggle the nodes connected to an HTML element
+			* @param HtmlElement el
+			*/
+			"toggle": function(el)
+			{
+				var ul = el.parentNode.getElementsByTagName('ul');
+				for (var i=0; i<ul.length; i++)
+				{
+					if (ul[i].parentNode.parentNode == el.parentNode)
+					{
+						ul[i].parentNode.style.display = (ul[i].parentNode.style.display == 'none')
+							? 'block'
+							: 'none';
+					}
+				}
+
+				(ul[0].parentNode.style.display == 'block')
+					? krumo.reclass(el, 'krumo-opened')
+					: krumo.unclass(el, 'krumo-opened');
+			}
+		}
+		</script><?php
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
