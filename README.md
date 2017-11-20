@@ -1,6 +1,8 @@
 Krumo: PHP structured information display solution
 =====
 
+![KRUMO - version 2.0 of print_r(); and var_dump();](http://krumo.kaloyan.info/images/logo.png)
+
 Krumo is a debugging tool, which displays structured information about any PHP variable. 
 It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.
 
@@ -69,6 +71,23 @@ in order hook it up to the skin folder and make the image web-accessible.
 Here's an example:
 
 	ul.krumo-first {background: url(%url%bg.gif);}
+	
+Here is what the skins look like:
+
+* skins/default 
+	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png) 
+
+* skins/blue
+	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png) 
+
+* skins/orange
+	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png) 
+
+* skins/green
+	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png) 
+
+* skins/schablon.com 
+	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png) 
 
 LICENSE
 ------------------------------------------------------------------------------
