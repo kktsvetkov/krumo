@@ -23,7 +23,7 @@ ul.krumo-first {
 	font: normal 12px arial;
 	border: solid 2px white;
 	border-top-width:1px;
-	background: url(%url%bg.gif);
+	background: url(data:image/gif;base64,R0lGODlhWgAJALMAAP///8vLy+Tk5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAABaAAkAAAQ6MAgh6az4astz314Ijl/pkaKJrmqbvivssnJN358973qPn7yfMEi0+YrDoxLJXDZxyehzCnNapVdLBAA7);
 	}
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -59,14 +59,14 @@ a.krumo-name {
 	font: bold 13px Arial;
 	}
 a.krumo-name big {
-	font: bold 20pt Georgia;
+	font: bold 20pt Console, "Courier New";
 	line-height: 14px;
 	position:relative;
 	top:2px;
 	left:-2px;
 	}
 * html a.krumo-name big {
-	font: bold 19pt Georgia;
+	font: bold 19pt Console, "Courier New";
 	top: 5px;
 	left: 0px;
 	line-height: 9px;

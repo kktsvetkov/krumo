@@ -535,29 +535,30 @@ This is a list of all the values from the <code><b><?php
 		// the content
 		//
 		?>
-<div class="krumo-root">
-	<ul class="krumo-node krumo-first">
-		<?php echo self::_dump($data);?>
-		<li class="krumo-footnote">
-			<div class="krumo-version" style="white-space:nowrap;">
-				<h6>Krumo version <?php echo self::version();?></h6> | <a
-					href="https://github.com/kktsvetkov/krumo"
-					target="_blank">https://github.com/kktsvetkov/krumo</a>
-			</div>
+			<div class="krumo-root">
+				<ul class="krumo-node krumo-first">
+					<?php echo self::_dump($data);?>
+					<li class="krumo-footnote">
+						<div class="krumo-version" style="white-space:nowrap;">
+							<h6>Krumo version <?php echo self::version();?></h6> | <a
+								href="https://github.com/kktsvetkov/krumo"
+								target="_blank">github.com/kktsvetkov/krumo</a>
+						</div>
 
-		<?php if (!empty($d['file']))
-		{
-			?>
-		<span class="krumo-call" style="white-space:nowrap;">
-			Called from <code><?php echo $d['file']?></code>,
-				line <code><?php echo $d['line']?></code></span>
-			<?php
-		} ?>
-		&nbsp;
-		</li>
-	</ul>
-</div>
-<?php
+					<?php if (!empty($d['file']))
+					{
+						?>
+					<span class="krumo-call" style="white-space:nowrap;">
+						Called from <code><?php echo $d['file']?></code>,
+							line <code><?php echo $d['line']?></code></span>
+						<?php
+					} ?>
+					&nbsp;
+					</li>
+				</ul>
+			</div>
+		<?php
+
 		// flee the hive
 		//
 		$_recursion_marker = self::_marker();
@@ -648,25 +649,13 @@ This is a list of all the values from the <code><b><?php
 		//
 		if ($_css = ($css != ''))
 		{
-
-			// fix the urls
-			//
-			$css_url = self::_config('css', 'url') . "skins/{$skin}/";
-			$css = preg_replace('~%url%~Uis', $css_url, $css);
-
-			// the CSS
-			//
 			?>
 <style type="text/css">
-/* Using Krumo Skin: <?php echo preg_replace('~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis', '', realpath($_));?> */
 <?php echo $css?>
+/* Using Krumo Skin: <?php echo preg_replace('~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis', '', realpath($_));?> */
 </style>
-<?php
-			// the JS
-			//
-			?>
 <script type="text/javascript">
-<?php echo file_get_contents(KRUMO_DIR . "krumo.js");?>
+<?php echo file_get_contents(KRUMO_DIR . 'krumo.js');?>
 </script>
 <?php
 		}

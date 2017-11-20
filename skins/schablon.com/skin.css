@@ -41,7 +41,7 @@ div.krumo-element {
 	white-space:nowrap;
 
 	background-color: white;
-	background-image: url(%url%empty.gif);
+	background-image: url(data:image/gif;base64,R0lGODlhCQAJALMAAP////8AAICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAJAAkAAAQSEAAhq6VWUpx3n+AVVl42ilkEADs=);
 	background-repeat: no-repeat;
 	background-position: 6px 5px;
 	padding: 2px 0px 3px 20px;
@@ -54,11 +54,11 @@ div.krumo-element:hover {
 	background-color: #BFDFFF;
 	}
 div.krumo-expand {
-	background-image: url(%url%collapsed.gif);
+	background-image: url(data:image/gif;base64,R0lGODlhCQAJALMAAP///wAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAJAAkAAAQTEIAna33USpwt79vncRpZgpcGRAA7);
 	cursor:pointer;
 	}
 div.krumo-opened {
-	background-image: url(%url%expanded.gif);
+	background-image: url(data:image/gif;base64,R0lGODlhCQAJALMAAP///wAAAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAJAAkAAAQQEMhJ63w4Z6C37JUXWmQJRAA7);
 	}
 a.krumo-name {
 	color:navy;
@@ -66,14 +66,14 @@ a.krumo-name {
 	line-height:12px;
 	}
 a.krumo-name big {
-	font: bold 16pt Georgia;
+	font: bold 16pt Console, "Courier New";
 	line-height: 10px;
 	position:relative;
 	top:2px;
 	left:-2px;
 	}
 * html a.krumo-name big {
-	font: bold 15pt Georgia;
+	font: bold 15pt Console, "Courier New";
 	float:left;
 	top: -5px;
 	left: 0px;
@@ -103,7 +103,7 @@ div.krumo-preview {
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 li.krumo-footnote {
-	background: white url(%url%dotted.gif) repeat-x;
+	background: white url(data:image/gif;base64,R0lGODlhCgACALMAAP///8DAwP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAKAAIAAAQIEMhJA7D4gggAOw==) repeat-x;
 	padding: 4px 5px 3px 5px;
 	list-style:none;
 	cursor:default;
