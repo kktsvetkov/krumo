@@ -1,0 +1,38 @@
+{
+	"name": "kktsvetkov/krumo",
+	"type": "library",
+	"description": "Krumo is a debugging tool, which displays structured information about any PHP variable. It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.",
+	"license": "LGPL-2.1",
+	"keywords":
+	[
+		"krumo",
+		"print_r",
+		"var_dump",
+		"var_export",
+		"debug",
+		"debugging",
+		"devel",
+		"development"
+	],
+	"authors":
+	[
+		{
+			"name": "Kaloyan Tsvetkov (KT)",
+			"email": "kaloyan@kaloyan.info",
+			"homepage": "http://kaloyan.info",
+			"role": "Developer"
+		}
+	],
+	"require":
+	{
+		"php": ">=5.3.0"
+	},
+	"autoload":
+	{
+		"files":
+		[
+			"class.krumo.php"
+		]
+	},
+	"homepage": "http://krumo.kaloyan.info"
+}
