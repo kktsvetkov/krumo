@@ -60,6 +60,14 @@ be called using static calls to the Krumo class. Here are several more examples:
 
  ... and so on, etc.
 
+If you want to get the output returned instead of printed, you can use
+the `krumo::fetch()` method for that:
+
+	$a = krumo::fetch($app, $env);
+
+Please note that the first time you call `Krumo` the dump it produces also
+prints the CSS and the JS code used to expand/collapse the dump nodes.
+
 SKINS
 ------------------------------------------------------------------------------
 There are several skins pre-installed with this package, but if you wish you can
