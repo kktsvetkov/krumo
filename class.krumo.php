@@ -583,6 +583,16 @@ This is a list of all the values from the <code><b><?php
 					}
 				}
 			}
+			$name = preg_replace(array(
+					'~^.+(krumo)~Uis',
+					'~\?>$~',
+					),
+				array(
+					'\\1',
+					''
+					),
+				$name);
+
 			unset($f);
 		}
 
