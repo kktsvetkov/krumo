@@ -548,19 +548,51 @@ This is a list of all the values from the <code><b><?php
 		$_ = debug_backtrace();
 		while($d = array_pop($_))
 		{
-			if ((strToLower($d['function']) == 'krumo')
-				|| (!empty($d['class']) && (strToLower($d['class']) == 'krumo')))
+			if (0 === strcasecmp($d['function'], 'krumo'))
 			{
 				break;
 			}
+
+			if (!empty($d['class']))
+			{
+				if (0 === strcasecmp($d['class'], 'krumo'))
+				{
+					break;
+				}
+			}
 		}
+
+		// find what the argument was ?
+		//
+		$name = '';
+		if (!empty($d['file']))
+		{
+			$f = file($d['file']);
+			$name = trim($f[$d['line']-1]);
+
+			// multi-line call ?
+			//
+			if (false === stripos($name, 'krumo'))
+			{
+				for ($i=$d['line']-2; $i >=0; $i--)
+				{
+					$name = $f[$i] . $name;
+					if (false !== stripos($name, 'krumo'))
+					{
+						break;
+					}
+				}
+			}
+			unset($f);
+		}
+
 
 		// the content
 		//
 		?>
 			<div class="krumo-root">
 				<ul class="krumo-node krumo-first">
-					<?php echo self::_dump($data);?>
+					<?php echo self::_dump($data, $name);?>
 					<li class="krumo-footnote">
 						<div class="krumo-version" style="white-space:nowrap;">
 							<h6>Krumo version <?php echo self::version();?></h6> | <a
