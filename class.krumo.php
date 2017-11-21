@@ -667,34 +667,11 @@ This is a list of all the values from the <code><b><?php
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 	/**
-	* Returns values from Krumo's configuration
-	*
-	* @param string $group
-	* @param string $name
-	* @param mixed $fallback
-	* @return mixed
+	* @var string name of the selected skin; must be the
+	*	name of one of the folders inside the skins/
+	*	folder that contains "skin.css" inside it
 	*/
-	protected static function _config($group, $name, $fallback=null)
-	{
-		static $_config = array();
-
-		// not loaded ?
-		//
-		if (empty($_config))
-		{
-			$_config = (array) @parse_ini_file(
-				KRUMO_DIR . 'krumo.ini',
-				true);
-		}
-
-		// exists ?
-		//
-		return (isset($_config[$group][$name]))
-			? $_config[$group][$name]
-			: $fallback;
-	}
-
-	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	public static $skin = 'schablon.com';
 
 	/**
 	* Print the skin (CSS)
@@ -704,7 +681,7 @@ This is a list of all the values from the <code><b><?php
 	{
 		static $_css = false;
 
-		// already set ?
+		// already printed ?
 		//
 		if ($_css)
 		{
@@ -712,15 +689,19 @@ This is a list of all the values from the <code><b><?php
 		}
 
 		$css = '';
-		$skin = self::_config('skin', 'selected', 'default');
+		$skin = self::$skin;
 
 		// custom selected skin ?
 		//
 		$_ = KRUMO_DIR . "skins/{$skin}/skin.css";
-		if ($fp = @fopen($_, 'r', 1))
+		if (!file_exists($_))
 		{
-			$css = fread($fp, filesize($_));
-			fclose($fp);
+			trigger_error(
+				"Unable to find \"{$_}\"",
+				E_USER_WARNING);
+		} else
+		{
+			$css = file_get_contents($_);
 		}
 
 		// default skin ?
