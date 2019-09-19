@@ -10,7 +10,7 @@
 * @license http://opensource.org/licenses/lgpl-license.php GNU Lesser General public License Version 2.1
 *
 * @package Krumo
-* @version 0.4
+* @version 0.5
 */
 
 //////////////////////////////////////////////////////////////////////////////
@@ -51,9 +51,9 @@ class krumo
 	* Return Krumo version
 	* @return string
 	*/
-	public static function version()
+	static function version()
 	{
-		return '0.4';
+		return '0.5';
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -61,7 +61,7 @@ class krumo
 	/**
 	* Prints a debug backtrace
 	*/
-	public static function backtrace()
+	static function backtrace()
 	{
 		// disabled ?
 		//
@@ -78,7 +78,7 @@ class krumo
 	/**
 	* Prints a list of all currently declared classes.
 	*/
-	public static function classes()
+	static function classes()
 	{
 		// disabled ?
 		//
@@ -100,7 +100,7 @@ This is a list of all currently declared classes.
 	/**
 	* Prints a list of all currently declared interfaces (PHP5 only).
 	*/
-	public static function interfaces()
+	static function interfaces()
 	{
 		// disabled ?
 		//
@@ -122,7 +122,7 @@ This is a list of all currently declared interfaces.
 	/**
 	* Prints a list of all currently included (or required) files.
 	*/
-	public static function includes()
+	static function includes()
 	{
 		// disabled ?
 		//
@@ -144,7 +144,7 @@ This is a list of all currently included (or required) files.
 	/**
 	* Prints a list of all currently declared functions.
 	*/
-	public static function functions()
+	static function functions()
 	{
 		// disabled ?
 		//
@@ -166,7 +166,7 @@ This is a list of all currently declared functions.
 	/**
 	* Prints a list of all currently declared constants.
 	*/
-	public static function defines()
+	static function defines()
 	{
 		// disabled ?
 		//
@@ -188,7 +188,7 @@ This is a list of all currently declared constants (defines).
 	/**
 	* Prints a list of all currently loaded PHP extensions.
 	*/
-	public static function extensions()
+	static function extensions()
 	{
 		// disabled ?
 		//
@@ -210,7 +210,7 @@ This is a list of all currently loaded PHP extensions.
 	/**
 	* Prints a list of all HTTP request headers.
 	*/
-	public static function headers()
+	static function headers()
 	{
 		// disabled ?
 		//
@@ -255,7 +255,7 @@ This is a list of all HTTP request headers.
 	/**
 	* Prints a list of the configuration settings read from <i>php.ini</i>
 	*/
-	public static function phpini()
+	static function phpini()
 	{
 		// disabled ?
 		//
@@ -282,7 +282,7 @@ This is a list of the configuration settings read from <code><b><?php echo get_c
 	/**
 	* Prints a list of all your configuration settings.
 	*/
-	public static function conf()
+	static function conf()
 	{
 		// disabled ?
 		//
@@ -304,7 +304,7 @@ This is a list of all your configuration settings.
 	/**
 	* Prints a list of the specified directories under your <i>include_path</i> option.
 	*/
-	public static function path()
+	static function path()
 	{
 		// disabled ?
 		//
@@ -326,7 +326,7 @@ This is a list of the specified directories under your <code><b>include_path</b>
 	/**
 	* Prints a list of all the values from the <i>$_REQUEST</i> array.
 	*/
-	public static function request()
+	static function request()
 	{
 		// disabled ?
 		//
@@ -348,7 +348,7 @@ This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_GET</i> array.
 	*/
-	public static function get()
+	static function get()
 	{
 		// disabled ?
 		//
@@ -370,7 +370,7 @@ This is a list of all the values from the <code><b>$_GET</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_POST</i> array.
 	*/
-	public static function post()
+	static function post()
 	{
 		// disabled ?
 		//
@@ -392,7 +392,7 @@ This is a list of all the values from the <code><b>$_POST</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_SERVER</i> array.
 	*/
-	public static function server()
+	static function server()
 	{
 		// disabled ?
 		//
@@ -414,7 +414,7 @@ This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_COOKIE</i> array.
 	*/
-	public static function cookie()
+	static function cookie()
 	{
 		// disabled ?
 		//
@@ -436,7 +436,7 @@ This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_ENV</i> array.
 	*/
-	public static function env()
+	static function env()
 	{
 		// disabled ?
 		//
@@ -458,7 +458,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 	/**
 	* Prints a list of all the values from the <i>$_SESSION</i> array.
 	*/
-	public static function session()
+	static function session()
 	{
 		// disabled ?
 		//
@@ -481,7 +481,7 @@ This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 	* Prints a list of all the values from an INI file.
 	* @param string $ini_file
 	*/
-	public static function ini($ini_file)
+	static function ini($ini_file)
 	{
 		// disabled ?
 		//
@@ -517,7 +517,7 @@ This is a list of all the values from the <code><b><?php
 	* Dump information about a variable
 	* @param mixed $data,...
 	*/
-	public static function dump($data)
+	static function dump($data)
 	{
 		// disabled ?
 		//
@@ -646,7 +646,7 @@ This is a list of all the values from the <code><b><?php
 	* Return the dump information about a variable
 	* @param mixed $data,...
 	*/
-	public static function fetch($data)
+	static function fetch($data)
 	{
 		// disabled ?
 		//
@@ -671,7 +671,7 @@ This is a list of all the values from the <code><b><?php
 	*	name of one of the folders inside the skins/
 	*	folder that contains "skin.css" inside it
 	*/
-	public static $skin = 'schablon.com';
+	static $skin = 'schablon.com';
 
 	/**
 	* Print the skin (CSS)
@@ -796,7 +796,7 @@ This is a list of all the values from the <code><b><?php
 	*
 	* @return boolean
 	*/
-	public static function enable()
+	static function enable()
 	{
 		return true === self::_debug(true);
 	}
@@ -806,7 +806,7 @@ This is a list of all the values from the <code><b><?php
 	*
 	* @return boolean
 	*/
-	public static function disable()
+	static function disable()
 	{
 		return false === self::_debug(false);
 	}
@@ -1122,18 +1122,19 @@ This is a list of all the values from the <code><b><?php
 	*/
 	private static function _object(&$data, $name)
 	{
+		$has_properties = !empty(get_object_vars($data));
 		?>
 		<li class="krumo-child">
 
-			<div <?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
-				class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>" >
+			<div <?php if ($has_properties) {?> onClick="krumo.toggle(this);"<?php } ?>
+				class="krumo-element<?php echo $has_properties ? ' krumo-expand' : '';?>" >
 
 					<a class="krumo-name"><?php echo $name;?></a>
 					(<em class="krumo-type">Object</em>)
 					<strong class="krumo-class"><?php echo get_class($data);?></strong>
 			</div>
 
-			<?php if (count($data))
+			<?php if ($has_properties)
 			{
 				self::_vars($data);
 			} ?>
