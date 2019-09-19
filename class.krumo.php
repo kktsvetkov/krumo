@@ -10,7 +10,7 @@
 * @license http://opensource.org/licenses/lgpl-license.php GNU Lesser General public License Version 2.1
 *
 * @package Krumo
-* @version 0.5
+* @version 0.4.1
 */
 
 //////////////////////////////////////////////////////////////////////////////
@@ -53,7 +53,7 @@ class krumo
 	*/
 	static function version()
 	{
-		return '0.5';
+		return '0.4.1';
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
