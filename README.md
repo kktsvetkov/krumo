@@ -6,7 +6,7 @@ Krumo: PHP structured information display solution
 Krumo is a debugging tool, which displays structured information about any PHP variable.
 It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.
 
-The project was first hosted and maintained at http://www.sourceforge.net/projects/krumo/
+The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
 
 OVERVIEW
 ------------------------------------------------------------------------------
