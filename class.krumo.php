@@ -766,24 +766,32 @@ This is a list of all the values from the <code><b><?php
 
 			/**
 			* Toggle the nodes connected to an HTML element
+			* @param ClickEvent evt
 			* @param HtmlElement el
 			*/
-			"toggle": function(el)
+			"toggle": function(evt, el)
 			{
-				var ul = el.parentNode.getElementsByTagName('ul');
-				for (var i=0; i<ul.length; i++)
-				{
-					if (ul[i].parentNode.parentNode == el.parentNode)
-					{
-						ul[i].parentNode.style.display = (ul[i].parentNode.style.display == 'none')
-							? 'block'
-							: 'none';
+				let ctrl = evt.ctrlKey;
+				if (ctrl) {
+					let opened = el.className.indexOf('krumo-opened') > -1;
+					let parent = el.parentNode;
+					let nest  = parent.querySelectorAll(".krumo-nest");
+					let exp   = parent.querySelectorAll(".krumo-expand");
+					for (let i = 0; i < nest.length; i++) {
+					    nest[i].style.display = (opened) ? 'none' : 'block';
 					}
+					for (let i = 0; i < exp.length; i++) {
+					    (opened) ? krumo.unclass(exp[i], 'krumo-opened') : krumo.reclass(exp[i], 'krumo-opened');
+					}
+				} else {
+					let ul = el.parentNode.getElementsByTagName('ul');
+					for (let i = 0; i < ul.length; i++) {
+						if (ul[i].parentNode.parentNode == el.parentNode) {
+							ul[i].parentNode.style.display = (ul[i].parentNode.style.display === 'none') ? 'block' : 'none';
+						}
+					}
+					(ul[0].parentNode.style.display === 'block') ? krumo.reclass(el, 'krumo-opened') : krumo.unclass(el, 'krumo-opened');
 				}
-
-				(ul[0].parentNode.style.display == 'block')
-					? krumo.reclass(el, 'krumo-opened')
-					: krumo.unclass(el, 'krumo-opened');
 			}
 		}
 		</script><?php
@@ -1077,7 +1085,7 @@ This is a list of all the values from the <code><b><?php
 		?>
 		<li class="krumo-child">
 
-			<div <?php if (count($data) > 0) {?> onClick="krumo.toggle(this);"<?php } ?>
+			<div <?php if (count($data) > 0) {?> onClick="krumo.toggle(evt, this);"<?php } ?>
 				class="krumo-element<?php echo count($data) > 0 ? ' krumo-expand' : '';?>">
 
 					<a class="krumo-name"><?php echo $name;?></a>
@@ -1126,7 +1134,7 @@ This is a list of all the values from the <code><b><?php
 		?>
 		<li class="krumo-child">
 
-			<div <?php if ($has_properties) {?> onClick="krumo.toggle(this);"<?php } ?>
+			<div <?php if ($has_properties) {?> onClick="krumo.toggle(evt, this);"<?php } ?>
 				class="krumo-element<?php echo $has_properties ? ' krumo-expand' : '';?>" >
 
 					<a class="krumo-name"><?php echo $name;?></a>
@@ -1252,7 +1260,7 @@ This is a list of all the values from the <code><b><?php
 
 		?>
 		<li class="krumo-child">
-			<div <?php if ($_extra) {?> onClick="krumo.toggle(this);"<?php } ?>
+			<div <?php if ($_extra) {?> onClick="krumo.toggle(evt, this);"<?php } ?>
 				class="krumo-element<?php echo $_extra ? ' krumo-expand' : '';?>" >
 
 					<a class="krumo-name"><?php echo $name;?></a>
