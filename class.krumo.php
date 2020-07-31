@@ -10,30 +10,8 @@
 * @license http://opensource.org/licenses/lgpl-license.php GNU Lesser General public License Version 2.1
 *
 * @package Krumo
-* @version 0.4.1
+* @version 0.4.2
 */
-
-//////////////////////////////////////////////////////////////////////////////
-
-/**
-* Set the KRUMO_DIR constant up with the absolute path to Krumo files. If it
-* is not defined, include_path will be used. Set KRUMO_DIR only if any other
-* module or application has not already set it up.
-*/
-if (!defined('KRUMO_DIR'))
-{
-	define('KRUMO_DIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-}
-
-/**
-* This constant sets the maximum strings of strings that will be shown
-* as they are. Longer strings will be truncated with this length, and
-* their `full form` will be shown in a child node.
-*/
-if (!defined('KRUMO_TRUNCATE_LENGTH'))
-{
-	define('KRUMO_TRUNCATE_LENGTH', 50);
-}
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -53,7 +31,7 @@ class krumo
 	*/
 	static function version()
 	{
-		return '0.4.1';
+		return '0.4.2';
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -605,7 +583,7 @@ This is a list of all the values from the <code><b><?php
 					<?php echo self::_dump($data, $name);?>
 					<li class="krumo-footnote">
 						<div class="krumo-version" style="white-space:nowrap;">
-							<h6>Krumo version <?php echo self::version();?></h6> | <a
+							<h6>Krumo v<?php echo self::version();?></h6> | <a
 								href="https://github.com/kktsvetkov/krumo"
 								target="_blank">github.com/kktsvetkov/krumo</a>
 						</div>
@@ -691,44 +669,45 @@ This is a list of all the values from the <code><b><?php
 		$css = '';
 		$skin = self::$skin;
 
-		// custom selected skin ?
+		// legacy skin names
 		//
-		$_ = KRUMO_DIR . "skins/{$skin}/skin.css";
-		if (!file_exists($_))
+		switch ($skin)
 		{
-			trigger_error(
-				"Unable to find \"{$_}\"",
-				E_USER_WARNING);
-		} else
-		{
-			$css = file_get_contents($_);
+			case 'schablon.com':
+				$skin = 'kaloyan.info';
+				break;
 		}
 
-		// default skin ?
+		// custom selected skin ?
 		//
-		if (!$css && ($skin != 'default'))
+		$skin_file = __DIR__ . "/skins/{$skin}/skin.css";
+		if (!file_exists($skin_file))
 		{
-			$skin = 'default';
-			$_ = KRUMO_DIR . "skins/default/skin.css";
-			$css = file_get_contents($_);
+			trigger_error(
+				"Unable to find \"{$skin_file}\"",
+				E_USER_WARNING);
+
+			// use default skin
+			//
+			$skin_file = __DIR__ . "/skins/default/skin.css";
+		}
+
+		$css = file_get_contents($skin_file);
+		if (empty($css))
+		{
+			return false;
 		}
 
 		// print ?
 		//
-		if ($_css = ($css != ''))
-		{
-			?>
+		?>
 <style type="text/css">
-<?php echo $css?>
-/* Using Krumo Skin: <?php echo preg_replace(
-	'~^' . preg_quote(realpath(KRUMO_DIR) . DIRECTORY_SEPARATOR) . '~Uis',
-	'',
-	realpath($_));?> */
-</style><?php
-			self::_js();
-		}
+<?php echo $css, "\n", '/* Using Krumo Skin: ', str_replace(__DIR__, '', $skin_file), ' */'; ?>
+</style>
+<?php
+		self::_js();
 
-		return $_css;
+		return true;
 	}
 
 	/**
@@ -1233,6 +1212,20 @@ This is a list of all the values from the <code><b><?php
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 	/**
+	* This constant is the default value for the maximum length of strings
+	* that will be shown as they are. Longer strings will be truncated to
+	* length of {@link Krumo::$truncate_length}, and their `full form` will
+	* be shown in a child node.
+	*/
+	const TRUNCATE_LENGTH = 50;
+
+	/**
+	* @var integer
+	* @see Krumo::_string()
+	*/
+	static $truncate_length = self::TRUNCATE_LENGTH;
+
+	/**
 	* Render a dump for a string value
 	*
 	* @param mixed $data
@@ -1244,9 +1237,18 @@ This is a list of all the values from the <code><b><?php
 		//
 		$_extra = false;
 		$_ = $data;
-		if (strLen($data) > KRUMO_TRUNCATE_LENGTH)
+
+		$truncate_length = (int) self::$truncate_length;
+		if (defined('KRUMO_TRUNCATE_LENGTH'))
 		{
-			$_ = substr($data, 0, KRUMO_TRUNCATE_LENGTH - 3) . '...';
+			// use legacy setting instead
+			//
+			$truncate_length = KRUMO_TRUNCATE_LENGTH;
+		}
+
+		if (strlen($data) > $truncate_length)
+		{
+			$_ = substr($data, 0, $truncate_length - 3) . '...';
 			$_extra = true;
 		}
 
