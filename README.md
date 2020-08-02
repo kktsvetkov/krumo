@@ -98,20 +98,45 @@ To the Krumo skin, you have to set it at `krumo::$skin`:
 
 Here is what the pre-installed skins look like:
 
-  * skins/default
-  ![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
+### skins/kaloyan.info
+![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_kaloyan_info_theme.png)
+This is the new default theme, `kaloyan.info`. It is not as color heavy as the other skins
+```php
+	// set up using the "default" skin
+	krumo::$skin = 'kaloyan.info';
+```
 
-  * skins/blue
-  ![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
+### skins/default
+![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
+As the name suggests, this is the old "default" theme.
+```php
+	// set up using the "default" skin
+	krumo::$skin = 'default';
+```
 
-  * skins/orange
-  ![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
+### skins/blue
+![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
+This is a blue version of the old default theme
+```php
+	// set up using the "blue" skin
+	krumo::$skin = 'blue';
+```
 
-  * skins/green
-  ![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
+### skins/orange
+![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
+This is an orange version of the old default theme
+```php
+	// set up using the "orange" skin
+	krumo::$skin = 'orange';
+```
 
-  * skins/kaloyan.info
-  ![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_kaloyan_info_theme.png)
+### skins/green
+![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png?s=g)
+This is a green version of the old default theme
+```php
+	// set up using the "green" skin
+	krumo::$skin = 'green';
+```
 
 ## License
 
