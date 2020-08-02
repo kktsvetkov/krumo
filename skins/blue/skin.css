@@ -129,7 +129,8 @@ li.krumo-footnote a:hover {
 	}
 
 li.krumo-footnote span.krumo-call {
-	font:normal 11px verdana;
+	white-space:nowrap;
+	font:normal 11px tahoma, verdana;
 	position: relative;
 	top: 1px;
 	}
