@@ -98,19 +98,19 @@ To the Krumo skin, you have to set it at `krumo::$skin`:
 
 Here is what the pre-installed skins look like:
 
-* skins/default
+  * skins/default
   ![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
 
-* skins/blue
+  * skins/blue
   ![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
 
-* skins/orange
+  * skins/orange
   ![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
 
-* skins/green
+  * skins/green
   ![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
 
-* skins/kaloyan.info
+  * skins/kaloyan.info
   ![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
 
 ## License
