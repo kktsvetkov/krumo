@@ -6,18 +6,18 @@ Krumo: PHP structured information display solution
 Krumo is a debugging tool, which displays structured information about any PHP variable.
 It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.
 
-# OVERVIEW
+# Overview
 
-To put it simply, Krumo is a replacement for print_r() and var_dump(). By definition Krumo
+To put it simply, Krumo is a replacement for `print_r()` and `var_dump()`. By definition Krumo
 is a debugging tool, which displays structured information about any PHP variable.
 
-A lot of developers use print_r() and var_dump() in the means of debugging
-tools. Although they were intended to present human readble information about a
+A lot of developers use `print_r()` and `var_dump()` in the means of debugging
+tools. Although they were intended to present human readable information about a
 variable, we can all agree that in general they are not. Krumo is an
 alternative: it does the same job, but it presents the information beautified
 using CSS/JS/HTML.
 
-# EXAMPLES
+# Examples
 
 Here's a basic example, which will return a report on the array variable passed
 as argument to it:
@@ -38,7 +38,7 @@ collapse it. Here's an example to test this:
 	krumo($x1);
 ```
 The krumo() is the only standalone function from the package, and this is
-because basic dumps about variables (like print_r() or var_dump()) are the most
+because basic dumps about variables (like `print_r()` or `var_dump()`) are the most
 common tasks such functionality is used for. The rest of the functionality can
 be called using static calls to the Krumo class. Here are several more examples:
 ```php
@@ -67,7 +67,7 @@ the `krumo::fetch()` method for that:
 Please note that the first time you call `Krumo` the dump it produces also
 prints the CSS and the JS code used to expand/collapse the dump nodes.
 
-# SKINS
+# Skins
 
 There are several skins pre-installed with this package, but if you wish you can
 create skins of your own. The skins are simply CSS files that are prepended to
@@ -90,24 +90,26 @@ Here's an example:
 ```
 Here is what the pre-installed skins look like:
 
-* skins/default
+ * skins/default
 	![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
 
-* skins/blue
+ * skins/blue
 	![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
 
-* skins/orange
+ * skins/orange
 	![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
 
-* skins/green
+ * skins/green
 	![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
 
-* skins/kaloyan.info
+ * skins/kaloyan.info
 	![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
 
-# LICENSE
+# License
+
 This project is released under GNU Lesser General Public License v2.1
 https://opensource.org/licenses/LGPL-2.1
 
-# HISTORY
+# History
+
 The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
