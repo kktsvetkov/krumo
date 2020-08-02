@@ -7,7 +7,7 @@
 * used by a lot of PHP developers.
 *
 * @author Kaloyan K. Tsvetkov <kaloyan@kaloyan.info>
-* @license http://opensource.org/licenses/lgpl-license.php GNU Lesser General public License Version 2.1
+* @license https://opensource.org/licenses/LGPL-2.1 GNU Lesser General public License Version 2.1
 *
 * @package Krumo
 * @version 0.4.2
@@ -25,16 +25,7 @@
 */
 class krumo
 {
-	/**
-	* Return Krumo version
-	* @return string
-	*/
-	static function version()
-	{
-		return '0.4.2';
-	}
-
-	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+	const version = '0.4.3';
 
 	/**
 	* Prints a debug backtrace
