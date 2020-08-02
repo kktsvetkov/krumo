@@ -623,6 +623,7 @@ This is a list of all the values from the <code><b><?php
 	/**
 	* Return the dump information about a variable
 	* @param mixed $data,...
+	* @return string
 	*/
 	static function fetch($data)
 	{
@@ -649,7 +650,7 @@ This is a list of all the values from the <code><b><?php
 	*	name of one of the folders inside the skins/
 	*	folder that contains "skin.css" inside it
 	*/
-	static $skin = 'schablon.com';
+	static $skin = 'kaloyan.info';
 
 	/**
 	* Print the skin (CSS)
@@ -719,8 +720,8 @@ This is a list of all the values from the <code><b><?php
 
 			/**
 			* Add a CSS class to an HTML element
-			* @param HtmlElement el
-			* @param string className
+			* @param {HtmlElement} el
+			* @param {String} className
 			*/
 			"reclass": function(el, className)
 			{
@@ -732,8 +733,8 @@ This is a list of all the values from the <code><b><?php
 
 			/**
 			* Remove a CSS class to an HTML element
-			* @param HtmlElement el
-			* @param string className
+			* @param {HtmlElement} el
+			* @param {String} className
 			*/
 			"unclass": function(el, className)
 			{
@@ -745,7 +746,7 @@ This is a list of all the values from the <code><b><?php
 
 			/**
 			* Toggle the nodes connected to an HTML element
-			* @param HtmlElement el
+			* @param {HtmlElement} el
 			*/
 			"toggle": function(el)
 			{
