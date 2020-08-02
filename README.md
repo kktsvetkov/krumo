@@ -1,12 +1,11 @@
-Krumo: PHP structured information display solution
-=====
+# Krumo: PHP structured information display solution
 
 ![KRUMO - version 2.0 of print_r(); and var_dump();](http://krumo.kaloyan.info/images/logo.png)
 
 Krumo is a debugging tool, which displays structured information about any PHP variable.
 It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.
 
-# Overview
+## Overview
 
 To put it simply, Krumo is a replacement for `print_r()` and `var_dump()`. By definition Krumo
 is a debugging tool, which displays structured information about any PHP variable.
@@ -17,7 +16,26 @@ variable, we can all agree that in general they are not. Krumo is an
 alternative: it does the same job, but it presents the information beautified
 using CSS/JS/HTML.
 
-# Examples
+## Installation
+
+This library can be installed in autoloadable way using Composer as [kktsvetkov/krumo](https://packagist.org/packages/kktsvetkov/krumo).
+
+```sh
+php composer.phar require kktsvetkov/krumo
+```
+
+In the rare occasion that you are dealing with some legacy code that
+has not yet embraced Composer, you can also download this package,
+and include `class.krumo.php` in your project, or make it accessible
+somewhere in your `INCLUDE_PATH`:
+
+```php
+include 'class.krumo.php';
+```
+
+More or less, that's it.
+
+## Examples
 
 Here's a basic example, which will return a report on the array variable passed
 as argument to it:
@@ -67,7 +85,7 @@ the `krumo::fetch()` method for that:
 Please note that the first time you call `Krumo` the dump it produces also
 prints the CSS and the JS code used to expand/collapse the dump nodes.
 
-# Skins
+## Skins
 
 There are several skins pre-installed with this package, but if you wish you can
 create skins of your own. The skins are simply CSS files that are prepended to
@@ -77,17 +95,7 @@ To the Krumo skin, you have to set it at `krumo::$skin`:
 ```php
 	krumo::$skin = 'blue';
 ```
-If you want to use images in your CSS (for background, list-style, etc), you
-have to put them inline inside the CSS class as data URIs:
-```css
-	background-image: url(data:image/gif;base64,R0lGODlhCQAJALMAAP///wAAAP///wAA...AJAAkAAAQTEIAna33USpwt79vncRpZgpcGRAA7);
-```
-Here's an example:
-```css
-	background-color: white;
-	background-image: url(data:image/gif;base64,R0lGODlhCgACALMAAP8D...AIAAAQIEMhJA7D4gggAOw==);
-	background-repeat: repeat-x;
-```
+
 Here is what the pre-installed skins look like:
 
  * skins/default
@@ -105,11 +113,11 @@ Here is what the pre-installed skins look like:
  * skins/kaloyan.info
 	![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
 
-# License
+## License
 
 This project is released under GNU Lesser General Public License v2.1
 https://opensource.org/licenses/LGPL-2.1
 
-# History
+## History
 
 The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
