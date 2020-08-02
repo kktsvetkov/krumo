@@ -112,6 +112,7 @@ li.krumo-footnote {
 	line-height: 13px;
 	}
 div.krumo-version {
+	white-space:nowrap;
 	float:right;
 	}
 li.krumo-footnote h6 {

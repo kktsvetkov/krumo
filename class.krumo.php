@@ -609,7 +609,7 @@ This is a list of all the values from the <code><b><?php
 					<?php if (!empty($d['file']))
 					{
 						?>
-					<span class="krumo-call" style="white-space:nowrap;">
+					<span class="krumo-call">
 						<?php printf(
 							'Called from <code>%s</code>, line <code>%d</code>',
 							$d['file'],
