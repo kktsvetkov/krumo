@@ -6,8 +6,8 @@
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 ul.krumo-node {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	background-color: white;
 	}
 ul.krumo-node ul {
@@ -18,7 +18,7 @@ ul.krumo-node ul {
 	}
 div.krumo-root {
 	border: solid 1px black;
-	margin: 1em 0em;
+	margin: 1em 0;
 	}
 ul.krumo-first {
 	font: normal 11px tahoma, verdana;
@@ -30,8 +30,8 @@ ul.krumo-first {
 li.krumo-child {
 	display:block;
 	list-style: none;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	overflow:hidden;
 	}
 div.krumo-element {
@@ -44,7 +44,7 @@ div.krumo-element {
 	background-image: url(data:image/gif;base64,R0lGODlhCQAJALMAAP////8AAICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAAAJAAkAAAQSEAAhq6VWUpx3n+AVVl42ilkEADs=);
 	background-repeat: no-repeat;
 	background-position: 6px 5px;
-	padding: 2px 0px 3px 20px;
+	padding: 2px 0 3px 20px;
 	}
 * html div.krumo-element {
 	padding-bottom: 3px;
@@ -76,13 +76,13 @@ a.krumo-name big {
 	font: bold 15pt Console, "Courier New";
 	float:left;
 	top: -5px;
-	left: 0px;
-	padding: 0px;
-	margin: 0px;
+	left: 0;
+	padding: 0;
+	margin: 0;
 	}
 em.krumo-type {
 	font-style:normal;
-	margin: 0px 2px;
+	margin: 0 2px;
 	}
 
 /* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -93,7 +93,7 @@ div.krumo-preview {
 	background: lightyellow;
 	border: solid 1px #808000;
 	overflow:auto;
-	margin: 5px 1em 1em 0px;
+	margin: 5px 1em 1em 0;
 	white-space:pre;
 	}
 * html div.krumo-preview {
@@ -116,8 +116,8 @@ div.krumo-version {
 	}
 li.krumo-footnote h6 {
 	font: bold 11px verdana;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	color:navy;
 	display:inline;
 	}
