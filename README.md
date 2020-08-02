@@ -98,26 +98,26 @@ To the Krumo skin, you have to set it at `krumo::$skin`:
 
 Here is what the pre-installed skins look like:
 
- * skins/default
-	![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
+* skins/default
+  ![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
 
- * skins/blue
-	![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
+* skins/blue
+  ![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
 
- * skins/orange
-	![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
+* skins/orange
+  ![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
 
- * skins/green
-	![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
+* skins/green
+  ![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
 
- * skins/kaloyan.info
-	![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
+* skins/kaloyan.info
+  ![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
 
 ## License
 
 This project is released under GNU Lesser General Public License v2.1
-https://opensource.org/licenses/LGPL-2.1
+[https://opensource.org/licenses/LGPL-2.1]
 
 ## History
 
-The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
+The project was first hosted and maintained at [https://sourceforge.net/projects/krumo/].
