@@ -50,6 +50,7 @@ class krumo
 
 		// render it
 		//
+		self::$pre_name = 'debug_backtrace()';
 		return self::dump(debug_backtrace());
 	}
 
@@ -72,6 +73,7 @@ class krumo
 This is a list of all currently declared classes.
 </div>
 		<?php
+		self::$pre_name = 'get_declared_classes()';
 		return self::dump(get_declared_classes());
 	}
 
@@ -94,6 +96,7 @@ This is a list of all currently declared classes.
 This is a list of all currently declared interfaces.
 </div>
 		<?php
+		self::$pre_name = 'get_declared_interfaces()';
 		return self::dump(get_declared_interfaces());
 	}
 
@@ -116,6 +119,7 @@ This is a list of all currently declared interfaces.
 This is a list of all currently included (or required) files.
 </div>
 		<?php
+		self::$pre_name = 'get_included_files()';
 		return self::dump(get_included_files());
 	}
 
@@ -138,6 +142,7 @@ This is a list of all currently included (or required) files.
 This is a list of all currently declared functions.
 </div>
 		<?php
+		self::$pre_name = 'get_defined_functions()';
 		return self::dump(get_defined_functions());
 	}
 
@@ -160,6 +165,7 @@ This is a list of all currently declared functions.
 This is a list of all currently declared constants (defines).
 </div>
 		<?php
+		self::$pre_name = 'get_defined_constants()';
 		return self::dump(get_defined_constants());
 	}
 
@@ -182,6 +188,7 @@ This is a list of all currently declared constants (defines).
 This is a list of all currently loaded PHP extensions.
 </div>
 		<?php
+		self::$pre_name = 'get_loaded_extensions()';
 		return self::dump(get_loaded_extensions());
 	}
 
@@ -227,6 +234,7 @@ This is a list of all currently loaded PHP extensions.
 This is a list of all HTTP request headers.
 </div>
 		<?php
+		self::$pre_name = 'getallheaders()';
 		return self::dump(getallheaders());
 	}
 
@@ -254,6 +262,7 @@ This is a list of all HTTP request headers.
 This is a list of the configuration settings read from <code><b><?php echo get_cfg_var('cfg_file_path');?></b></code>.
 </div>
 		<?php
+		self::$pre_name = get_cfg_var('cfg_file_path');
 		return self::dump(parse_ini_file(get_cfg_var('cfg_file_path'), true));
 	}
 
@@ -276,6 +285,7 @@ This is a list of the configuration settings read from <code><b><?php echo get_c
 This is a list of all your configuration settings.
 </div>
 		<?php
+		self::$pre_name = 'ini_get_all()';
 		return self::dump(ini_get_all());
 	}
 
@@ -298,6 +308,7 @@ This is a list of all your configuration settings.
 This is a list of the specified directories under your <code><b>include_path</b></code> option.
 </div>
 		<?php
+		self::$pre_name = 'ini_get("include_path")';
 		return self::dump(explode(PATH_SEPARATOR, ini_get('include_path')));
 	}
 
@@ -320,6 +331,7 @@ This is a list of the specified directories under your <code><b>include_path</b>
 This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_REQUEST';
 		return self::dump($_REQUEST);
 	}
 
@@ -342,6 +354,7 @@ This is a list of all the values from the <code><b>$_REQUEST</b></code> array.
 This is a list of all the values from the <code><b>$_GET</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_GET';
 		return self::dump($_GET);
 	}
 
@@ -364,6 +377,7 @@ This is a list of all the values from the <code><b>$_GET</b></code> array.
 This is a list of all the values from the <code><b>$_POST</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_POST';
 		return self::dump($_POST);
 	}
 
@@ -386,6 +400,7 @@ This is a list of all the values from the <code><b>$_POST</b></code> array.
 This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_SERVER';
 		return self::dump($_SERVER);
 	}
 
@@ -408,6 +423,7 @@ This is a list of all the values from the <code><b>$_SERVER</b></code> array.
 This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_COOKIE';
 		return self::dump($_COOKIE);
 	}
 
@@ -430,6 +446,7 @@ This is a list of all the values from the <code><b>$_COOKIE</b></code> array.
 This is a list of all the values from the <code><b>$_ENV</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_ENV';
 		return self::dump($_ENV);
 	}
 
@@ -452,6 +469,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 </div>
 		<?php
+		self::$pre_name = '$_SESSION';
 		return self::dump( isset($_SESSION) ? $_SESSION : array());
 	}
 
@@ -486,10 +504,16 @@ This is a list of all the values from the <code><b><?php
 	?></b></code> INI file.
 </div>
 		<?php
+		self::$pre_name = $ini_file;
 		return self::dump($_);
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+
+	/**
+	* @var string preemptive name for some of the lazy dumps
+	*/
+	protected static $pre_name = '';
 
 	/**
 	* Dump information about a variable
@@ -543,6 +567,11 @@ This is a list of all the values from the <code><b><?php
 		// find what the argument was ?
 		//
 		$name = '';
+		if (!empty(self::$pre_name))
+		{
+			$name = self::$pre_name;
+			self::$pre_name = '';
+		} else
 		if (!empty($d['file']))
 		{
 			$f = file($d['file']);
