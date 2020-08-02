@@ -868,7 +868,7 @@ This is a list of all the values from the <code><b><?php
 
 		// null ?
 		//
-		if (is_null($data))
+		if (null === $data)
 		{
 			return self::_null($name);
 		}
@@ -926,9 +926,8 @@ This is a list of all the values from the <code><b><?php
 
 		// new bee ?
 		//
-		if (!is_null($bee))
+		if (null === $bee)
 		{
-
 			// stain it
 			//
 			$_recursion_marker = self::_marker();
@@ -1110,7 +1109,11 @@ This is a list of all the values from the <code><b><?php
 
 					<a class="krumo-name"><?php echo $name;?></a>
 					(<em class="krumo-type">Object</em>)
-					<strong class="krumo-class"><?php echo get_class($data);?></strong>
+					<strong class="krumo-class">
+						<?php
+						echo htmlSpecialChars( get_class($data) );
+						?>
+					</strong>
 			</div>
 
 			<?php if ($has_properties)
@@ -1304,7 +1307,7 @@ This is a list of all the values from the <code><b><?php
 * Alias of {@link krumo::dump()}
 *
 * @param mixed $data,...
-* @see kurmo::dump()
+* @see krumo::dump()
 */
 function krumo()
 {
