@@ -8,9 +8,6 @@
 *
 * @author Kaloyan K. Tsvetkov <kaloyan@kaloyan.info>
 * @license https://opensource.org/licenses/LGPL-2.1 GNU Lesser General public License Version 2.1
-*
-* @package Krumo
-* @version 0.4.2
 */
 
 //////////////////////////////////////////////////////////////////////////////
@@ -250,7 +247,9 @@ This is a list of all HTTP request headers.
 		//
 		?>
 <div class="krumo-title">
-This is a list of the configuration settings read from <code><b><?php echo get_cfg_var('cfg_file_path');?></b></code>.
+This is a list of the configuration settings read from <code><b><?php
+	echo htmlspecialchars( get_cfg_var('cfg_file_path') );
+	?></b></code>.
 </div>
 		<?php
 		self::$pre_name = get_cfg_var('cfg_file_path');
@@ -602,7 +601,7 @@ This is a list of all the values from the <code><b><?php
 					<?php echo self::_dump($data, $name);?>
 					<li class="krumo-footnote">
 						<div class="krumo-version" style="white-space:nowrap;">
-							<h6>Krumo v<?php echo self::version();?></h6> | <a
+							<h6>Krumo v<?php echo self::version;?></h6> | <a
 								href="https://github.com/kktsvetkov/krumo"
 								target="_blank">github.com/kktsvetkov/krumo</a>
 						</div>
