@@ -6,10 +6,8 @@ Krumo: PHP structured information display solution
 Krumo is a debugging tool, which displays structured information about any PHP variable.
 It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.
 
-The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
+# OVERVIEW
 
-OVERVIEW
-------------------------------------------------------------------------------
 To put it simply, Krumo is a replacement for print_r() and var_dump(). By definition Krumo
 is a debugging tool, which displays structured information about any PHP variable.
 
@@ -19,8 +17,8 @@ variable, we can all agree that in general they are not. Krumo is an
 alternative: it does the same job, but it presents the information beautified
 using CSS/JS/HTML.
 
-EXAMPLES
-------------------------------------------------------------------------------
+# EXAMPLES
+
 Here's a basic example, which will return a report on the array variable passed
 as argument to it:
 ```php
@@ -69,8 +67,8 @@ the `krumo::fetch()` method for that:
 Please note that the first time you call `Krumo` the dump it produces also
 prints the CSS and the JS code used to expand/collapse the dump nodes.
 
-SKINS
-------------------------------------------------------------------------------
+# SKINS
+
 There are several skins pre-installed with this package, but if you wish you can
 create skins of your own. The skins are simply CSS files that are prepended to
 the result that Krumo prints.
@@ -86,25 +84,30 @@ have to put them inline inside the CSS class as data URIs:
 ```
 Here's an example:
 ```css
-	background: white url(data:image/gif;base64,R0lGODlhCgACALMAAP///8D...AIAAAQIEMhJA7D4gggAOw==) repeat-x;
+	background-color: white;
+	background-image: url(data:image/gif;base64,R0lGODlhCgACALMAAP8D...AIAAAQIEMhJA7D4gggAOw==);
+	background-repeat: repeat-x;
 ```
 Here is what the pre-installed skins look like:
 
 * skins/default
-	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
+	![skins/default](http://krumo.kaloyan.info/screenshots/krumo_default_theme.png)
 
 * skins/blue
-	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
+	![skins/blue](http://krumo.kaloyan.info/screenshots/krumo_blue_theme.png)
 
 * skins/orange
-	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
+	![skins/orange](http://krumo.kaloyan.info/screenshots/krumo_orange_theme.png)
 
 * skins/green
-	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
+	![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
 
-* skins/schablon.com
-	![skins/schablon.com](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
+* skins/kaloyan.info
+	![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
 
-LICENSE
-------------------------------------------------------------------------------
+# LICENSE
 This project is released under GNU Lesser General Public License v2.1
+https://opensource.org/licenses/LGPL-2.1
+
+# HISTORY
+The project was first hosted and maintained at https://sourceforge.net/projects/krumo/.
