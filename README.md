@@ -111,7 +111,7 @@ Here is what the pre-installed skins look like:
   ![skins/green](http://krumo.kaloyan.info/screenshots/krumo_green_theme.png)
 
   * skins/kaloyan.info
-  ![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_schablon_com_theme.png)
+  ![skins/kaloyan.info](http://krumo.kaloyan.info/screenshots/krumo_kaloyan_info_theme.png)
 
 ## License
 
