@@ -242,7 +242,7 @@ This is a list of all HTTP request headers.
 			return false;
 		}
 
-		if (!readable(get_cfg_var('cfg_file_path')))
+		if (!is_readable(get_cfg_var('cfg_file_path')))
 		{
 			return false;
 		}
@@ -452,7 +452,7 @@ This is a list of all the values from the <code><b>$_ENV</b></code> array.
 This is a list of all the values from the <code><b>$_SESSION</b></code> array.
 </div>
 		<?php
-		return self::dump($_SESSION);
+		return self::dump( isset($_SESSION) ? $_SESSION : array());
 	}
 
 	/**
@@ -523,7 +523,7 @@ This is a list of all the values from the <code><b><?php
 
 		// find caller
 		//
-		$_ = debug_backtrace();
+		$_ = debug_backtrace(1); // "1" is DEBUG_BACKTRACE_IGNORE_ARGS
 		while($d = array_pop($_))
 		{
 			if (0 === strcasecmp($d['function'], 'krumo'))
@@ -574,7 +574,6 @@ This is a list of all the values from the <code><b><?php
 			unset($f);
 		}
 
-
 		// the content
 		//
 		?>
@@ -592,8 +591,12 @@ This is a list of all the values from the <code><b><?php
 					{
 						?>
 					<span class="krumo-call" style="white-space:nowrap;">
-						Called from <code><?php echo $d['file']?></code>,
-							line <code><?php echo $d['line']?></code></span>
+						<?php printf(
+							'Called from <code>%s</code>, line <code>%d</code>',
+							$d['file'],
+							$d['line']
+						); ?>
+					</span>
 						<?php
 					} ?>
 					&nbsp;
