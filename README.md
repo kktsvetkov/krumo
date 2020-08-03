@@ -77,13 +77,27 @@ be called using static calls to the Krumo class. Here are several more examples:
 ```
  ... and so on, etc.
 
+
+Please note that the first time you call `Krumo` the dump it produces also
+prints the CSS and the JS code used to expand/collapse the dump nodes.
+
+### krumo::fetch()
+
 If you want to get the output returned instead of printed, you can use
 the `krumo::fetch()` method for that:
 ```php
 	$a = krumo::fetch($app, $env);
 ```
-Please note that the first time you call `Krumo` the dump it produces also
-prints the CSS and the JS code used to expand/collapse the dump nodes.
+
+### krumo::queue()
+
+It's been a valid complain that sometimes Krumo output is called in the middle
+of some opened HTML tag, and that breaks the output of both that tag and Krumo
+itself. You can use `krumo::queue()` instead of `krumo::dump()` to solve that
+problem, since `krumo::queue()` will print its output at the end of the script:
+```php
+	krumo::queue($request);
+```
 
 ## Skins
 

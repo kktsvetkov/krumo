@@ -22,7 +22,7 @@
 */
 class krumo
 {
-	const version = '0.4.3';
+	const version = '0.4.4';
 
 	/**
 	* Prints a debug backtrace
@@ -522,10 +522,10 @@ This is a list of all the values from the <code><b><?php
 		//
 		if (func_num_args() > 1)
 		{
-			$_ = func_get_args();
-			foreach($_ as $d)
+			$args = func_get_args();
+			foreach($args as $arg)
 			{
-				self::dump($d);
+				self::dump( $arg );
 			}
 
 			return true;
@@ -537,8 +537,8 @@ This is a list of all the values from the <code><b><?php
 
 		// find caller
 		//
-		$_ = debug_backtrace(1); // "1" is DEBUG_BACKTRACE_IGNORE_ARGS
-		while($d = array_pop($_))
+		$trace = debug_backtrace(1); // "1" is DEBUG_BACKTRACE_IGNORE_ARGS
+		while($d = array_pop($trace))
 		{
 			if (0 === strcasecmp($d['function'], 'krumo'))
 			{
@@ -643,8 +643,8 @@ This is a list of all the values from the <code><b><?php
 	}
 
 	/**
-	* Return the dump information about a variable
-	* @param mixed $data,...
+	* Return the dump information about variable\variables
+	* @param mixed $data,... pass as many arguments as you want
 	* @return string
 	*/
 	static function fetch($data)
@@ -658,11 +658,27 @@ This is a list of all the values from the <code><b><?php
 
 		ob_start();
                 call_user_func_array(
-			array(__CLASS__, 'dump'),
+			array(get_called_class(), 'dump'),
 			func_get_args()
 			);
 
                 return ob_get_clean();
+	}
+
+	/**
+	* Prints the dump information about variable\variables at end of a script
+	* @param mixed $data,... pass as many arguments as you want
+	* @return string
+	*/
+	static function queue($data)
+	{
+		$output = call_user_func_array(
+			array(get_called_class(), 'fetch'),
+			func_get_args()
+			);
+
+		register_shutdown_function('printf', '%s', $output);
+		return $output;
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -945,7 +961,7 @@ This is a list of all the values from the <code><b><?php
 	*/
 	private static function &_hive(&$bee)
 	{
-		static $_ = array();
+		static $_bee_hive = array();
 
 		// new bee ?
 		//
@@ -964,12 +980,12 @@ This is a list of all the values from the <code><b><?php
 					: $bee[$_recursion_marker]++
 					);
 
-			$_[0][] =& $bee; // KT: stupid PHP4 static reference hack
+			$_bee_hive[0][] =& $bee; // KT: stupid static reference hack
 		}
 
 		// return all bees
 		//
-		return $_[0];
+		return $_bee_hive[0];
 	}
 
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -987,14 +1003,13 @@ This is a list of all the values from the <code><b><?php
 		// prevent endless recursion loops
 		//
 		$_recursion_marker = self::_marker();
-		$_r = ($_is_object)
+		$has_recursion = ($_is_object)
 			? !empty($data->$_recursion_marker)
 			: !empty($data[$_recursion_marker]) ;
-		$_r = (integer) $_r;
 
 		// recursion detected
 		//
-		if ($_r > 0)
+		if ($has_recursion)
 		{
 			return self::_recursion();
 		}
