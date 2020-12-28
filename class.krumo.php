@@ -537,7 +537,7 @@ This is a list of all the values from the <code><b><?php
 
 		// find caller
 		//
-		$trace = debug_backtrace(1); // "1" is DEBUG_BACKTRACE_IGNORE_ARGS
+		$trace = debug_backtrace(2); // "2" is DEBUG_BACKTRACE_IGNORE_ARGS
 		while($d = array_pop($trace))
 		{
 			if (0 === strcasecmp($d['function'], 'krumo'))
