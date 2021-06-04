@@ -1,4 +1,6 @@
-[![Latest Version](http://img.shields.io/packagist/v/kktsvetkov/krumo.svg)](https://packagist.org/packages/kktsvetkov/krumo) [![GitHub license](https://img.shields.io/github/license/kktsvetkov/krumo.svg)](https://github.com/kktsvetkov/krumo/blob/master/LICENSE)
+[![Package Version](https://poser.pugx.org/kktsvetkov/krumo/v/stable)](https://packagist.org/packages/kktsvetkov/krumo) 
+[![Total Downloads](https://poser.pugx.org/kktsvetkov/krumo/downloads)](//packagist.org/packages/kktsvetkov/krumo)
+[![License](https://poser.pugx.org/kktsvetkov/krumo/license)](//packagist.org/packages/kktsvetkov/krumo)
 
 # Krumo: PHP structured information display solution
 
