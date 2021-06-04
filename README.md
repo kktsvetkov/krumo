@@ -1,3 +1,5 @@
+[![Latest Version](http://img.shields.io/packagist/v/kktsvetkov/krumo.svg)](https://packagist.org/packages/kktsvetkov/krumo) [![GitHub license](https://img.shields.io/github/license/kktsvetkov/krumo.svg)](https://github.com/kktsvetkov/krumo/blob/master/LICENSE)
+
 # Krumo: PHP structured information display solution
 
 ![KRUMO - version 2.0 of print_r(); and var_dump();](http://krumo.kaloyan.info/images/logo.png)
